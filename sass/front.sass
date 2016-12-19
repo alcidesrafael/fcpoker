@@ -1,17 +1,27 @@
+@import mixins
+@import ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/variables
+@import ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins
+@import ../bower_components/breakpoint-sass/stylesheets/breakpoint
+
 body
 	background: radial-gradient(circle,#383333,#000)
-
+		repeat: no-repeat
+		attachment: fixed
 	color: #fff
 
 div.logo
 	width: 100%
 	display: block
-	margin: 50px 0
+	margin: 70px 0 50px
 	text-align: center
 	position: relative
 
+	+breakpoint($celular)
+		margin: 50px 0 30px
+
 	img
-		
+		+breakpoint($celular)
+			width: 50%
 
 div.senha
 	width: 100%
@@ -27,6 +37,13 @@ div.senha
 		font-size: 2em
 		background: transparent
 
+		+breakpoint($celular)
+			width: 85%
+			font-size: 1.2em
+
+		&:focus
+			letter-spacing: 10px
+
 
 div.botao
 	width: 100%
@@ -40,12 +57,13 @@ div.botao
 		padding: 15px
 		background: transparent
 
+		+breakpoint($celular)
+			width: 60%
+
 div.regras
 	width: 100%
 	display: block
 	text-align: center
 
-
-	ul
-
-		li
+.carousel-indicators li
+	visibility: hidden

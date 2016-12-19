@@ -20,7 +20,7 @@
 		<main>
 			<div class="container">
 				<div class="senha">
-					<input type="password" placeholder="Insira a senha!">
+					<input type="password" placeholder="Insira a senha!" onfocus="this.placeholder=''" onblur="this.placeholder='Insira a senha!'">
 				</div>
 				<div class="botao container">
 					<button> Entrar! </button>
@@ -28,18 +28,50 @@
 			</div>
 		</main>
 		<footer>
-			<div class="regras">
-				<ul>
-					<li>1ª regra do clube da luta: você não fala sobre o clube da luta</li>
-					<li>2ª regra do clube da luta: você não fala sobre o clube da luta</li>
-					<li></li>
-					<li></li>
-					<li></li>
-					<li></li>
-					<li></li>
-					<li></li>
-				</ul>
+			<div class="container regras">
+				<div id="myCarousel" class="carousel slide" data-ride="carousel">
+					<ol class="carousel-indicators">
+						<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+						<li data-target="#myCarousel" data-slide-to="1"></li>
+						<li data-target="#myCarousel" data-slide-to="2"></li>
+						<li data-target="#myCarousel" data-slide-to="3"></li>
+						<li data-target="#myCarousel" data-slide-to="4"></li>
+						<li data-target="#myCarousel" data-slide-to="5"></li>
+						<li data-target="#myCarousel" data-slide-to="6"></li>
+						<li data-target="#myCarousel" data-slide-to="7"></li>
+					</ol>
+					
+					<div class="carousel-inner" role="listbox">
+						<div class="item active">
+							<span>1ª regra do clube da luta: você não fala sobre o clube da luta.</span>
+						</div>
+						<div class="item">
+							<span>2ª regra do clube da luta: você não fala sobre o clube da luta.</span>
+						</div>
+						<div class="item">
+							<span>3ª regra do clube da luta: Quando alguém disser "pare" ou perder os sentidos a luta acaba.</span>
+						</div>
+						<div class="item">
+							<span>4ª regra do clube da luta: Só duas pessoas em cada luta.</span>
+						</div>
+						<div class="item">
+							<span>5ª regra do clube da luta: Uma luta de cada vez.</span>
+						</div>
+						<div class="item">
+							<span>6ª regra do clube da luta: Sem camisa, sem sapatos.</span>
+						</div>
+						<div class="item">
+							<span>7ª regra do clube da luta: As lutas duram o tempo que for necessário.</span>
+						</div>
+						<div class="item">
+							<span>8ª regra do clube da luta: Se é a sua primeira noite no Clube da Luta, você tem que lutar.</span>
+						</div>
+					</div>
+				</div>
 			</div>
 		</footer>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	</body>
 </html>
