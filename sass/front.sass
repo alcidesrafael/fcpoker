@@ -69,3 +69,31 @@ div.regras
 
 .carousel-indicators li
 	visibility: hidden
+
+div.icones-canto
+	img
+		width: 50px
+		filter: drop-shadow(0px 2px 60px $branco)
+		opacity: 0.9
+
+	span
+		position: fixed
+
+		&.superior
+			top: 0px
+			margin-top: 15px
+
+		&.inferior
+			bottom: 0px
+			margin-bottom: 15px
+		
+		&.direito
+			right: 0px
+			margin-right: 15px
+
+		&.esquerdo
+			left: 0px
+			margin-left: 15px
+
+		+breakpoint($tablet)		
+			visibility: hidden
