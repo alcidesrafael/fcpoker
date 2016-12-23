@@ -1,0 +1,101 @@
+@import ../helpers/mixins
+@import ../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/variables
+@import ../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins
+@import ../../bower_components/breakpoint-sass/stylesheets/breakpoint
+
+body
+	+gradient(120deg, #000, #262120)
+	color: $branco
+
+header
+	width: 100%
+	height: 106px
+	background-color: $preto
+	display: flex
+	position: fixed
+	top: 0
+	left: 0
+	border-bottom: 2px solid $red
+
+.menu
+	width: 100%
+
+	ul
+		float: right
+		padding: 20px
+		margin-top: 20px
+		text-align: right
+
+		+breakpoint($tablet)
+			display: none
+
+		li
+			display: inline
+			padding: 10px
+
+			span
+				color: $red
+				font-size: 1.2rem
+				padding: 2px
+
+
+	.logo
+		img
+			width: 100px
+			height: auto
+			float: left
+			padding: 15px
+			margin-left: 10px
+
+.jumbotron
+	margin-top: 106px
+	border-bottom: 2px solid $red
+	background:
+		image: url(../../img/banner-bg.jpg)
+		position: top center
+		repeat: no-repeat
+		attachment: fixed
+		size: cover
+
+	.banner
+		width: 100%
+		height: 300px
+
+
+		p
+			color: $preto
+			font-size: 1.5rem
+			font-weight: $bold
+			text-align: center
+			width: 50%
+			max-width: 100%
+			margin: 200px auto 0
+			border: 2px solid $preto
+			padding: 40px
+
+
+
+.board
+	width: 70%
+	text-align: center
+	color: $preto
+	margin: 0 auto 40px
+	border: 1px solid $red
+	padding: 40px 60px
+
+	h2
+		color: $red
+		font-size: 2rem
+		margin: 0 0 20px
+
+	img
+		width: 100%
+		height: auto
+		display: block
+		max-width: 100%
+		margin: 0 0 20px
+
+	p
+		color: $branco
+		width: 50%
+		margin: 0 auto

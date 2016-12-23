@@ -1,7 +1,8 @@
 /* ======== Cores */
 $preto: #000
 $branco: #fff
-$red: red
+$red: #c61111
+$cinza: #f4f4f4
 
 /* ======== Font */
 $light: 300
@@ -48,18 +49,3 @@ $tablet: max-width 991px
 =font-size($size) 
   font-size: $size
   font-size: calculateRem($size)
-
-=opacity($opacity) 
-  opacity: $opacity
-  $opacity-ie: $opacity * 100
-  filter: alpha(opacity=$opacity-ie)
-
-/* ======== Background Color Opacity */
-=background-opacity($color: #000, $opacity: 0.85) 
-  background: $color
-  background: rgba($color, $opacity)
-
-/* ======== Columns */
-=columns($count: 3, $gap: 10) 
-  @include css3-prefix('column-count', $count)
-  @include css3-prefix('column-gap', $gap)
