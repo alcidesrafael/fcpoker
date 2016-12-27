@@ -5,7 +5,27 @@
 		<title> Fight Club Poker </title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="css/geral.css">
-			<link rel="stylesheet" href="css/pages/front.css">
+		<link rel="stylesheet" href="css/pages/front.css">
+		<link rel="apple-touch-icon-precomposed" sizes="57x57" href="img/icons/home.htmlapple-touch-icon-57x57.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/icons/apple-touch-icon-114x114.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/icons/apple-touch-icon-72x72.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/icons/apple-touch-icon-144x144.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="60x60" href="img/icons/apple-touch-icon-60x60.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="120x120" href="img/icons/apple-touch-icon-120x120.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="76x76" href="img/icons/apple-touch-icon-76x76.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="152x152" href="img/icons/apple-touch-icon-152x152.png" />
+		<link rel="icon" type="image/png" href="img/icons/favicon-196x196.png" sizes="196x196" />
+		<link rel="icon" type="image/png" href="img/icons/favicon-96x96.png" sizes="96x96" />
+		<link rel="icon" type="image/png" href="img/icons/favicon-32x32.png" sizes="32x32" />
+		<link rel="icon" type="image/png" href="img/icons/favicon-16x16.png" sizes="16x16" />
+		<link rel="icon" type="image/png" href="img/icons/favicon-128.png" sizes="128x128" />
+		<meta name="application-name" content="Fight Club Poker"/>
+		<meta name="msapplication-TileColor" content="#000000" />
+		<meta name="msapplication-TileImage" content="img/icons/mstile-144x144.png" />
+		<meta name="msapplication-square70x70logo" content="img/icons/mstile-70x70.png" />
+		<meta name="msapplication-square150x150logo" content="img/icons/mstile-150x150.png" />
+		<meta name="msapplication-wide310x150logo" content="img/icons/mstile-310x150.png" />
+		<meta name="msapplication-square310x310logo" content="img/icons/mstile-310x310.png" />
 	</head>
 	<body>
 		<header>
@@ -17,12 +37,14 @@
 		</header>
 		<main>
 			<div class="container">
-				<div class="senha">
-					<input type="password" placeholder="Insira a senha!" onfocus="this.placeholder=''" onblur="this.placeholder='Insira a senha!'">
-				</div>
-				<div class="botao container">
-					<button> Entrar! </button>
-				</div>
+				<form id="senha" method="get"></form>
+					<div class="senha">
+						<input type="password" id="password" name="password" placeholder="Insira a senha!" onfocus="this.placeholder=''" onblur="this.placeholder='Insira a senha!'">
+					</div>
+					<div class="botao container">
+						<input id="submit" type="submit" value="Entrar!">
+					</div>
+				</form>
 			</div>
 		</main>
 		<footer>
@@ -57,13 +79,26 @@
 				</div>
 			</div>
 		</footer>
-	<div class="icones-canto">
+	<!--<div class="icones-canto">
 		<span class="esquerdo superior"><img src="img/icon_spade.png"></span>
 		<span class="direito superior"><img src="img/icon_heart.png"></span>
 		<span class="direito inferior"><img src="img/icon_club.png"></span>
 		<span class="esquerdo inferior"><img src="img/icon_diamond.png"></span>				
-	</div>
+	</div>-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.15.0/additional-methods.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('#submit').click(function(){
+				if($('#password').val() === '123456'){
+					window.location.href = "https://alcidesrafael.github.io/fcpoker/home.html";
+				}else{
+					alert('Você não merece estar aqui!');
+				};
+			});
+		});
+	</script>
 	</body>
 </html>

@@ -8,6 +8,7 @@
 		<link rel="stylesheet" href="css/geral.css">
 		<link rel="stylesheet" href="css/pages/home.css">
 		<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 		<link rel="apple-touch-icon-precomposed" sizes="57x57" href="img/icons/home.htmlapple-touch-icon-57x57.png" />
 		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/icons/apple-touch-icon-114x114.png" />
 		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/icons/apple-touch-icon-72x72.png" />
@@ -32,7 +33,7 @@
 	</head>
 	<body>
 		<nav class="menu-responsivo">
-			<ul class="itens-menu-responsivo">
+			<ul class="itens-menu-responsivo animated fadeIn">
 					<a class="btn-close"><i class="fa fa-times"></i></a>
 					<li><a href="#" class="item-menu"><span>Início</span></a></li>
 					<li><a href="#" class="item-menu"><span>O Clube</span></a></li>
@@ -67,7 +68,7 @@
 			<div class="board">
 				<h2>Nosso último campeão!</h2>
 				<img src="img/campeao.jpg">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus autem sint quae excepturi ullam aut, temporibus, vel, sequi quibusdam facere dolorem.</p>
+				<p>Nesta última quinta, 22/12, o troféu ficou nas mãos do Iron, após uma final disputada com William. O campeão saiu com uma trinca de A's no floop e recebeu de presente uma quadra no turn. </p>
 			</div>
 		</section>
 
@@ -75,14 +76,14 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<script src="https://use.fontawesome.com/729c709aab.js"></script>
 		<script>
-        $(".btn-menu").click(function(){
-          $(".menu-responsivo").show();
-          $(".itens-menu-responsivo").show();
-          $(".btn-close").show();
-        });
-        $(".btn-close").click(function(){
-          $(".itens-menu-responsivo").hide();
-        });
+	        $(".btn-menu").click(function(){
+	          $(".menu-responsivo").show();
+	          $(".itens-menu-responsivo").show();
+	          $(".btn-close").show();
+	        });
+	        $(".btn-close").click(function(){
+	          $(".itens-menu-responsivo").hide();
+	        });
         </script>
 	</body>
 </html>
