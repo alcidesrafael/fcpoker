@@ -18,12 +18,14 @@ header
 	top: 0
 	left: 0
 	border-bottom: 2px solid $red
+	opacity: 0.8
 
 	+breakpoint($celular)
 		height: 50px
 
 .menu-responsivo
 	width: 100%
+	display: none
 
 	.itens-menu-responsivo
 		display:none
@@ -131,6 +133,9 @@ header
 		repeat: no-repeat
 		attachment: fixed
 		size: cover
+
+	+breakpoint($tablet)
+		background-size: contain
 
 	
 
