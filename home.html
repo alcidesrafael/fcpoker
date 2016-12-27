@@ -6,14 +6,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="css/geral.css">
 		<link rel="stylesheet" href="css/pages/home.css">
+		<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
 	</head>
 	<body>
-		<header class="">
-			<nav class="menu">
-				<a href="#" class="logo">
-					<img src="img/logo.png">
-				</a>
-				<ul>
+		<nav class="menu-responsivo">
+			<ul class="itens-menu-responsivo">
+					<a class="btn-close"><i class="fa fa-times"></i></a>
 					<li><a href="#" class="item-menu"><span>Início</span></a></li>
 					<li><a href="#" class="item-menu"><span>O Clube</span></a></li>
 					<li><a href="#" class="item-menu"><span>Regras</span></a></li>
@@ -21,6 +19,21 @@
 					<li><a href="#" class="item-menu"><span>Vencedores</span></a></li>
 					<li><a href="#" class="item-menu"><span>Mesas</span></a></li>
 				</ul>
+		</nav>
+		<header class="">
+			<nav class="menu">
+				<a href="#" class="logo">
+					<img src="img/logo.png">
+				</a>
+				<ul class="itens-menu">
+					<li><a href="#" class="item-menu"><span>Início</span></a></li>
+					<li><a href="#" class="item-menu"><span>O Clube</span></a></li>
+					<li><a href="#" class="item-menu"><span>Regras</span></a></li>
+					<li><a href="#" class="item-menu"><span>Ranking</span></a></li>
+					<li><a href="#" class="item-menu"><span>Vencedores</span></a></li>
+					<li><a href="#" class="item-menu"><span>Mesas</span></a></li>
+				</ul>
+				<a href="#" class="item-menu btn-menu"><i class="fa fa-bars fa-lg"></i></a>
 			</nav>
 		</header>
 		<section class="jumbotron">
@@ -38,5 +51,14 @@
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script>
+        $(".btn-menu").click(function(){
+          $(".itens-menu-responsivo").show();
+          $(".btn-close").show();
+        });
+        $(".btn-close").click(function(){
+          $(".itens-menu-responsivo").hide();
+        });
+        </script>
 	</body>
 </html>

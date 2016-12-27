@@ -2,9 +2,11 @@
 @import ../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/variables
 @import ../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins
 @import ../../bower_components/breakpoint-sass/stylesheets/breakpoint
+@import ../../bower_components/font-awesome/scss/font-awesome
 
 body
-	+gradient(120deg, #000, #262120)
+	background: 
+		image: url(../../img/bg_texture.png)
 	color: $branco
 
 header
@@ -17,11 +19,62 @@ header
 	left: 0
 	border-bottom: 2px solid $red
 
+	+breakpoint($celular)
+		height: 50px
+
+.menu-responsivo
+	width: 100%
+
+	.itens-menu-responsivo
+		display:none
+
+		+breakpoint($tablet)
+			display: none
+			width: 100%
+			height: 100%
+			position: fixed
+			top: 0
+			left: 0
+			background-color: rgba(0,0,0,0.9)
+			margin-top: 0
+			padding: 90px 20px
+			z-index: 999
+
+		.btn-close
+			display: none
+			font-size: 3rem
+			position: fixed
+			top: 0
+			right: 0
+			padding: 30px
+			color: $red
+
+			+breakpoint($celular)
+				font-size: 1.8rem
+				padding: 10px
+
+		li
+			+breakpoint($tablet)
+				display: block
+				text-align: center
+				padding: 15px
+			
+			&:hover
+				background-color: rgba(255,0,0,0.3)
+				span
+					color: $branco
+
+			span
+				+breakpoint($tablet)
+					color: $red
+					font-size: 2rem
+					padding: 2px
+
 .menu
 	width: 100%
 
-	ul
-		float: right
+	.itens-menu
+		display: block
 		padding: 20px
 		margin-top: 20px
 		text-align: right
@@ -35,8 +88,11 @@ header
 
 			span
 				color: $red
-				font-size: 1.2rem
+				font-size: 1.3rem
 				padding: 2px
+
+				&:hover
+					color: $branco
 
 
 	.logo
@@ -47,8 +103,27 @@ header
 			padding: 15px
 			margin-left: 10px
 
+			+breakpoint($celular)
+				width: 45px
+				padding: 5px
+	
+	.btn-menu
+		display: none
+		font-size: 1.6rem
+		float: right
+		color: $red
+		padding: 30px
+		margin: 8px 8px 0 0
+
+		+breakpoint($tablet)
+			display: inline
+
+		+breakpoint($celular)
+			font-size: 1.2rem
+			padding: 6px
+
+
 .jumbotron
-	margin-top: 106px
 	border-bottom: 2px solid $red
 	background:
 		image: url(../../img/banner-bg.jpg)
@@ -57,14 +132,21 @@ header
 		attachment: fixed
 		size: cover
 
+	
+
 	.banner
 		width: 100%
 		height: 300px
 
+		+breakpoint($tablet)
+			height: 150px
+
+		+breakpoint($celular)
+			height: 100px
 
 		p
 			color: $preto
-			font-size: 1.5rem
+			font-size: 2rem
 			font-weight: $bold
 			text-align: center
 			width: 50%
@@ -72,21 +154,44 @@ header
 			margin: 200px auto 0
 			border: 2px solid $preto
 			padding: 40px
+			
+			+breakpoint($tablet)
+				width: 70%
+				padding: 30px
+				margin: 130px auto
+				background: rgba(255, 255, 255, 0.4)
+				box-shadow: 0 0 2px 0 $preto inset
 
+			+breakpoint($celular)
+				font-size: 1.5rem
+				width: 80%
+				padding: 10px
+				margin: 60px auto
 
 
 .board
 	width: 70%
 	text-align: center
-	color: $preto
 	margin: 0 auto 40px
-	border: 1px solid $red
+	background: rgba(255, 255, 255, 0.05)
 	padding: 40px 60px
+	box-shadow: 0 0 2px 0 $preto inset
+	border-radius: 3px
+
+	+breakpoint($tablet)
+		width: 90%
+		padding: 20px 30px
 
 	h2
-		color: $red
+		color: $branco
 		font-size: 2rem
 		margin: 0 0 20px
+
+		+breakpoint($tablet)
+			font-size: 1.6rem
+
+		+breakpoint($celular)
+			font-size: 1rem
 
 	img
 		width: 100%
@@ -99,3 +204,6 @@ header
 		color: $branco
 		width: 50%
 		margin: 0 auto
+
+		+breakpoint($tablet)
+			width: 100%
