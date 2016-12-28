@@ -26,10 +26,10 @@ p
 
 .mesas
 	margin-bottom: 150px
-	
+
 	.mesa-1
 
-		img
+		.mesa-svg
 			width: 100%
 
 			+breakpoint($celular)
@@ -38,9 +38,17 @@ p
 
 	.mesa-2
 
-		img
+		.mesa-svg
 			width: 100%
 
 			+breakpoint($celular)
 				+rotate(270deg)
 				margin-top: 250px
+
+	li
+		img
+			width: 60px
+			border-radius: 100%
+			position: absolute
+			top: 160px
+			left: 40px
