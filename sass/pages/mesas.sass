@@ -1,0 +1,45 @@
+@import ../helpers/mixins
+@import ../layout/header
+@import ../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/variables
+@import ../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins
+@import ../../bower_components/breakpoint-sass/stylesheets/breakpoint
+
+body
+	background: 
+		image: url(../../img/bg_texture.png)
+	color: $cinza
+
+h1
+	font-size: 3rem
+	font-weight: $bold
+	margin-top: 160px
+	margin-bottom: 6px
+	text-align: center
+
+	+breakpoint($celular)
+		margin-top: 60px
+		margin-bottom: 4px
+
+p
+	font-size: 0.8rem
+	text-align: center
+
+.mesas
+
+	.mesa-1
+
+		img
+			width: 100%
+
+			+breakpoint($celular)
+				+rotate(270deg)
+				margin-top: 130px
+
+	.mesa-2
+
+		img
+			width: 100%
+
+			+breakpoint($celular)
+				+rotate(270deg)
+				margin-top: 250px

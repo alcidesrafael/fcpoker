@@ -42,6 +42,11 @@ $tablet: max-width 768px
   -ms-border-radius: $radius
   border-radius: $radius
 
+=rotate($deg: 180deg)
+  -ms-transform: rotate($deg)
+  -webkit-transform: rotate($deg)
+  transform: rotate($deg)
+
 @function calculateRem($size) 
   $remSize: $size / 16px
   @return $remSize * 1rem
