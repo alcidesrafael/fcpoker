@@ -65,8 +65,19 @@
 				<div class="mesa-1">
 					<img class="mesa-svg" src="img/mesa-1.svg">
 					<ul class="players">
-						<li class="dealer1" id="dealer1"><span>Dealer</span></li>
-						<li class="dealer2" id="dealer2"><span>Dealer 2</span></li>
+						
+						<li class="dealer1" id="dealer1">
+							<span>
+								<a tabindex="0" role="button" data-trigger="focus" class="btn-dealer dealer1" id="dealer1-pop" data-toggle="popover" data-placement="bottom">Dealer</a>
+							</span>
+						</li>
+						
+						<li class="dealer2" id="dealer2">
+							<span>
+								<a tabindex="0" role="button" data-trigger="focus" class="btn-dealer dealer2" id="dealer2-pop" data-toggle="popover" data-placement="bottom">Dealer</a>
+							</span>
+						</li>
+						
 						<li class="pos99" id="player0"><span>Player 0</span></li>
 						<li class="pos99" id="player1"><span>Player 1</span></li>
 						<li class="pos99" id="player2"><span>Player 2</span></li>
@@ -90,6 +101,10 @@
 				<div class="mesa-2">
 					<img class="mesa-svg" src="img/mesa-2.svg">
 				</div>
+			</div>
+			<div id="div-popover" class="hide" >
+			   <a href="#">Renan</a>
+			   <a href="#">Vinicius</a>
 			</div>
 			<div class="sorteio">
 				<a href='#' class="btn-sorteio"><i class="fa fa-refresh fa-lg"><span> Sortear </span></i></a>
@@ -132,5 +147,25 @@
 				}
 			})
         </script>
+        <script type="text/javascript">
+		   $(document).ready(function () {
+		      // Associa o evento do popover ao clicar no link.
+		      $('.btn-dealer').popover({
+		         trigger: 'manual',
+		         html: true,
+		         title: 'Selecione o dealer:',
+		         content: $('#div-popover').html() // Adiciona o conteúdo da div oculta para dentro do popover.
+		      }).click(function (e) {
+		         e.preventDefault();
+		         // Exibe o popover.
+		         $(this).popover('toggle');
+		      });
+		 
+		      $('#btn-fechar').live('click', function (e) {
+		         // Oculta o popover ao clicar no botão fechar.
+		         $('#a-popover').popover('hide');
+		      });
+		   });
+		 </script>
 	</body>
 </html>
