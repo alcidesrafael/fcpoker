@@ -115,6 +115,17 @@
 			   			Vinicius
 			   		</label>
 			   	</div>
+			   	<div class="checkbox">
+			   		<label>
+			   			<input type="checkbox">
+			   			Dealer irá jogar
+			   		</label>
+			   	</div>
+			   	<div class="confirmar">
+			   		<a id="btn-confirmar">
+			   			Confirmar
+			   		</a>
+			   	</div>
 			</div>
 			<div class="sorteio">
 				<a href='#' class="btn-sorteio"><i class="fa fa-refresh fa-lg"><span> Sortear </span></i></a>
@@ -170,11 +181,13 @@
 		         // Exibe o popover.
 		         $(this).popover('toggle');
 		      });
-		 
-		      $('#btn-fechar').live('click', function (e) {
-		         // Oculta o popover ao clicar no botão fechar.
-		         $('#a-popover').popover('hide');
-		      });
+
+		      $('body').on('click', function(e) {
+		 	  	 if ($(e.target).data('toggle') !== 'popover'
+		         && $(e.target).parents('.popover.in').length === 0) { 
+		           $('#div-popover').popover('hide');
+		         }
+		 	  });
 		   });
 		 </script>
 	</body>
