@@ -47,6 +47,11 @@ $tablet: max-width 768px
   -webkit-transform: rotate($deg)
   transform: rotate($deg)
 
+=rotate-origin($origin)
+  -ms-transform-origin: $origin
+  -webkit-transform-origin: $origin
+  transform-origin: $origin
+
 @function calculateRem($size) 
   $remSize: $size / 16px
   @return $remSize * 1rem
