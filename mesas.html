@@ -59,25 +59,16 @@
 			</nav>
 		</header>
 		<section>
-			<h1> Mesas </h1>
-			<p>Último sorteio: 27/12/2016, 15:00</p>
+			<div class="top-tittle">
+				<h1> Mesas </h1>
+				<p id="last-sort">Último sorteio: 05/01/2017, 20:00</p>
+			</div>
 			<div class="mesas">
 				<div class="mesa-1">
 					<img class="mesa-svg" src="img/mesa-1.svg">
 					<ul class="players">
-						
-						<li class="dealer1" id="dealer1">
-							<span>
-								<a tabindex="0" role="button" data-trigger="focus" class="btn-dealer dealer1" id="dealer1-pop" data-toggle="popover" data-placement="bottom">Dealer</a>
-							</span>
-						</li>
-						
-						<li class="dealer2" id="dealer2">
-							<span>
-								<a tabindex="0" role="button" data-trigger="focus" class="btn-dealer dealer2" id="dealer2-pop" data-toggle="popover" data-placement="bottom">Dealer</a>
-							</span>
-						</li>
-						
+						<li class="dealer1 btn-dealer" id="dealer1"><span>Dealer</span></li>
+						<li class="dealer2 btn-dealer" id="dealer2"><span>Dealer</span></li>
 						<li class="pos99" id="player0"><span>Player 0</span></li>
 						<li class="pos99" id="player1"><span>Player 1</span></li>
 						<li class="pos99" id="player2"><span>Player 2</span></li>
@@ -102,29 +93,41 @@
 					<img class="mesa-svg" src="img/mesa-2.svg">
 				</div>
 			</div>
-			<div id="div-popover" class="hide" >
-			   	<div class="radio">
-					<label>
-			   			<input type="radio" name="dealer" id="dealer1" value="renan">
-			   			Renan
-			   		</label>
+			<div id="dealer-select" class="dealer-select" >
+				<h3>Selecione os dealers:</h3>
+				<p>Mesa 1</p>
+			   	<div>
+			   	    <select class="select">
+			   	    	<option disabled selected value>Selecione:</option>
+			   	    	<option>Renan</option>
+			   	    	<option>Vinicius</option>
+			   	    	<option>Outro</option>
+			   	    </select>
+			   	    <div class="slide">
+			   	    	<p>Dealer irá jogar</p>
+				   	    <div class="slide-check deactive">
+				   	    	<input type="checkbox" id="checkbox1" name="checkbox1"><label for="checkbox1"></label>
+				   		</div>
+					</div>
 			   	</div>
-			   	<div class="radio">
-					<label>
-			   			<input type="radio" name="dealer" id="dealer1" value="vinicius">
-			   			Vinicius
-			   		</label>
+			   	<hr>
+			   	<p>Mesa 2</p>
+			   	<div>
+			   	    <select class="select">
+			   	    	<option disabled selected value>Selecione:</option>
+			   	    	<option>Renan</option>
+			   	    	<option>Vinicius</option>
+			   	    	<option>Outro</option>
+			   	    </select>
+			   	    <div class="slide">
+			   	    	<p>Dealer irá jogar</p>
+				   	    <div class="slide-check deactive">
+				   	    	<input type="checkbox" id="checkbox2" name="checkbox2"><label for="checkbox2"></label>
+				   		</div>
+					</div>
 			   	</div>
-			   	<div class="checkbox">
-			   		<label>
-			   			<input type="checkbox">
-			   			Dealer irá jogar
-			   		</label>
-			   	</div>
-			   	<div class="confirmar">
-			   		<a id="btn-confirmar">
-			   			Confirmar
-			   		</a>
+				<div class="confirma">
+			   		<a href='#' class="btn-confirma"><span> Confirmar </span></a>
 			   	</div>
 			</div>
 			<div class="sorteio">
@@ -136,12 +139,12 @@
 		<script src="https://use.fontawesome.com/729c709aab.js"></script>
 		<script>
 	        $(".btn-menu").click(function(){
-	          $(".menu-responsivo").show();
-	          $(".itens-menu-responsivo").show();
-	          $(".btn-close").show();
+	            $(".menu-responsivo").show();
+	            $(".itens-menu-responsivo").show();
+	            $(".btn-close").show();
 	        });
 	        $(".btn-close").click(function(){
-	          $(".itens-menu-responsivo").hide();
+	            $(".itens-menu-responsivo").hide();
 	        });
         </script>
         <script>
@@ -163,32 +166,17 @@
 				}
 
 				for (var i = 0; i < resultados; i++) {
-						$('#player' + i).removeClass();
-						$('#player' + i).addClass('pos' + arr[i]);
+					$('#player' + i).removeClass();
+					$('#player' + i).addClass('pos' + arr[i]);
 				}
 			})
         </script>
-        <script type="text/javascript">
-		   $(document).ready(function () {
-		      // Associa o evento do popover ao clicar no link.
-		      $('.btn-dealer').popover({
-		         trigger: 'manual',
-		         html: true,
-		         title: 'Selecione o dealer:',
-		         content: $('#div-popover').html() // Adiciona o conteúdo da div oculta para dentro do popover.
-		      }).click(function (e) {
-		         e.preventDefault();
-		         // Exibe o popover.
-		         $(this).popover('toggle');
-		      });
-
-		      $('body').on('click', function(e) {
-		 	  	 if ($(e.target).data('toggle') !== 'popover'
-		         && $(e.target).parents('.popover.in').length === 0) { 
-		           $('#div-popover').popover('hide');
-		         }
-		 	  });
-		   });
-		 </script>
+        <script>
+        	$(document).ready(function(){
+        		$('.slide-check label').click(function(){
+        			$(this).closest(".slide-check").toggleClass('active deactive');
+        		});
+        	});
+        </script>
 	</body>
 </html>
