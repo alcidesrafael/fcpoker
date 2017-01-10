@@ -61,11 +61,24 @@
 		<section>
 			<div class="top-tittle">
 				<h1> Mesas </h1>
-				<p id="last-sort">Último sorteio: 05/01/2017, 20:00</p>
+				<p id="last-sort">Último sorteio: --/--/----, --:--</p>
 			</div>
 			<div class="mesas">
 				<div class="mesa-1">
 					<img class="mesa-svg" src="img/mesa-1.svg">
+					<div class="numeracao">
+						<ul>
+							<li class="number1">1</li>
+							<li class="number2">2</li>
+							<li class="number3">3</li>
+							<li class="number4">4</li>
+							<li class="number5">5</li>
+							<li class="number6">6</li>
+							<li class="number7">7</li>
+							<li class="number8">8</li>
+							<li class="number9">9</li>
+						</ul>
+					</div>
 					<ul class="players">
 						<li class="dealer1 btn-dealer" id="dealer1"><span>Dealer</span></li>
 						<li class="dealer2 btn-dealer" id="dealer2"><span>Dealer</span></li>
@@ -91,21 +104,34 @@
 				</div>
 				<div class="mesa-2">
 					<img class="mesa-svg" src="img/mesa-2.svg">
+					<div class="numeracao">
+						<ul>
+							<li class="number1">1</li>
+							<li class="number2">2</li>
+							<li class="number3">3</li>
+							<li class="number4">4</li>
+							<li class="number5">5</li>
+							<li class="number6">6</li>
+							<li class="number7">7</li>
+							<li class="number8">8</li>
+							<li class="number9">9</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<div id="dealer-select" class="dealer-select" >
 				<h3>Selecione os dealers:</h3>
 				<p>Mesa 1</p>
 			   	<div>
-			   	    <select class="select">
+			   	    <select id="select1" class="select">
 			   	    	<option disabled selected value>Selecione:</option>
-			   	    	<option>Renan</option>
-			   	    	<option>Vinicius</option>
-			   	    	<option>Outro</option>
+			   	    	<option value="renan">Renan</option>
+			   	    	<option value="vinicius">Vinicius</option>
+			   	    	<option value="outro">Outro</option>
 			   	    </select>
 			   	    <div class="slide">
 			   	    	<p>Dealer irá jogar</p>
-				   	    <div class="slide-check deactive">
+				   	    <div class="slide-check">
 				   	    	<input type="checkbox" id="checkbox1" name="checkbox1"><label for="checkbox1"></label>
 				   		</div>
 					</div>
@@ -113,25 +139,25 @@
 			   	<hr>
 			   	<p>Mesa 2</p>
 			   	<div>
-			   	    <select class="select">
+			   	    <select id="select2" class="select">
 			   	    	<option disabled selected value>Selecione:</option>
-			   	    	<option>Renan</option>
-			   	    	<option>Vinicius</option>
-			   	    	<option>Outro</option>
+			   	    	<option value="renan">Renan</option>
+			   	    	<option value="vinicius">Vinicius</option>
+			   	    	<option value="outro">Outro</option>
 			   	    </select>
 			   	    <div class="slide">
 			   	    	<p>Dealer irá jogar</p>
-				   	    <div class="slide-check deactive">
+				   	    <div class="slide-check">
 				   	    	<input type="checkbox" id="checkbox2" name="checkbox2"><label for="checkbox2"></label>
 				   		</div>
 					</div>
 			   	</div>
 				<div class="confirma">
-			   		<a href='#' class="btn-confirma"><span> Confirmar </span></a>
+			   		<a href="#" class="btn-confirma"><span> Confirmar </span></a>
 			   	</div>
 			</div>
 			<div class="sorteio">
-				<a href='#' class="btn-sorteio"><i class="fa fa-refresh fa-lg"><span> Sortear </span></i></a>
+				<a class="btn-sorteio"><i class="fa fa-refresh fa-lg"><span> Sortear </span></i></a>
 			</div>
 		</section>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -148,33 +174,101 @@
 	        });
         </script>
         <script>
-        	$(".btn-sorteio").click(function(){
-	        	var maximo = 18;
-				var resultados = 18;
+        	$(document).ready(function(){ //função que realiza o sorteio das posições
+	        	function sorteio(d1,d2){
+		        	var maximo = 18;
+					var resultados = 18;
 
-				var i, arr = [];
-				for (i = 0; i < maximo; i++) {
-				    arr[i] = i + 1;
+					var i, arr = [];
+					for (i = 0; i < maximo; i++) {
+					    arr[i] = i + 1;
+					}
+
+					var p, n, tmp;
+					for (p = arr.length; p;) {
+					    n = Math.random() * p-- | 0;
+					    tmp = arr[n];
+					    arr[n] = arr[p];
+					    arr[p] = tmp;
+					}
+
+					for (var i = 0; i < resultados; i++) {
+						$('#player' + i).removeClass();
+						$('#player' + i).addClass('pos' + arr[i]);
+					}
+
+					var tmp1, tmp2;
+					if(d1 == 4){
+						tmp1 = $(".pos9").attr('id'); //captura quem está na posição 9
+						tmp2 = $("#player4").attr('class'); //captura a posição atual do player 4
+						$("#player4").removeClass().addClass('pos9'); //define player 4 na posição 9
+						$("#" + tmp1).removeClass().addClass(tmp2); //define o player x na posição antiga
+
+					}if(d2 == 4){
+						tmp1 = $(".pos18").attr('id'); //captura quem está na posição 18
+						tmp2 = $("#player4").attr('class'); //captura a posição atual do player 4
+						$("#player4").removeClass().addClass('pos18'); //define player 4 na posição 9
+						$("#" + tmp1).removeClass().addClass(tmp2); //define o player x na posição antiga
+					}
+
 				}
 
-				var p, n, tmp;
-				for (p = arr.length; p;) {
-				    n = Math.random() * p-- | 0;
-				    tmp = arr[n];
-				    arr[n] = arr[p];
-				    arr[p] = tmp;
-				}
+	        	$(".btn-sorteio").click(function(){
+	        		$('#dealer-select').slideDown(1000); //mostra tela de seleção de dealer
+	        	});
 
-				for (var i = 0; i < resultados; i++) {
-					$('#player' + i).removeClass();
-					$('#player' + i).addClass('pos' + arr[i]);
-				}
-			})
+	        	$("#select1").change(function(){ //remove o dealer selecionado da outra lista
+	        		$("#select2 option").show();
+	        		var select = $("#select1 option:selected").val();
+	        		if(select !== "outro"){
+	        			$("#select2 option[value=" + select + "]").hide();
+	        		}
+	        	});
+
+	        	$("#select2").change(function(){ //remove o dealer selecionado da outra lista
+	        		$("#select1 option").show();
+	        		var select = $("#select2 option:selected").val();
+	        		if(select !== "outro"){
+	        			$("#select1 option[value=" + select + "]").hide();
+	        		}
+	        	});
+
+	        	$(".btn-confirma").click(function(){
+	        		var dealer1 = $("#select1 option:selected").val();
+	        		var dealer2 = $("#select2 option:selected").val();
+	        		var checkbox1 = $("#checkbox1").is(":checked");
+	        		var checkbox2 = $("#checkbox2").is(":checked");
+	        		var d1 = 100;
+	        		var d2 = 100;
+
+	        		if(checkbox1){
+	        			switch(dealer1){
+	        				case "renan":
+	        					d1 = 4;
+	        					break;
+	        			}
+	        		}
+
+	        		if(checkbox2){
+	        			switch(dealer2){
+	        				case "renan":
+	        					d2 = 4;
+	        					break;	
+	        			}
+	        		}
+
+	        		sorteio(d1,d2); //chama a função sorteio
+
+	        		now = new Date //mostra a data do ultimo sorteio na tela
+	        		$("#last-sort").text("Último sorteio: " + now.getDate() + "/" + now.getMonth()+1 + "/" + now.getFullYear() + " " + now.getHours() + ":" + (now.getMinutes()<10?'0':'') + now.getMinutes());
+
+	        	});
+	        });
         </script>
         <script>
         	$(document).ready(function(){
         		$('.slide-check label').click(function(){
-        			$(this).closest(".slide-check").toggleClass('active deactive');
+        			$(this).closest(".slide-check").toggleClass('active'); //slide verde ao selecionar
         		});
         	});
         </script>
