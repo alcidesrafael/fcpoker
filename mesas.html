@@ -153,7 +153,7 @@
 					</div>
 			   	</div>
 				<div class="confirma">
-			   		<a href="#" class="btn-confirma"><span> Confirmar </span></a>
+			   		<a class="btn-confirma"><span> Confirmar </span></a>
 			   	</div>
 			</div>
 			<div class="sorteio">
@@ -215,6 +215,7 @@
 
 	        	$(".btn-sorteio").click(function(){
 	        		$('#dealer-select').slideDown(1000); //mostra tela de seleção de dealer
+	        		$('html, body').animate({ scrollTop: $(document).height() }, 1000);
 	        	});
 
 	        	$("#select1").change(function(){ //remove o dealer selecionado da outra lista
@@ -261,6 +262,9 @@
 
 	        		now = new Date //mostra a data do ultimo sorteio na tela
 	        		$("#last-sort").text("Último sorteio: " + now.getDate() + "/" + now.getMonth()+1 + "/" + now.getFullYear() + " " + now.getHours() + ":" + (now.getMinutes()<10?'0':'') + now.getMinutes());
+
+	        		$("#dealer-select").slideUp(1000);
+	        		$('html, body').animate({ scrollTop: 0 }, 1000);
 
 	        	});
 	        });
