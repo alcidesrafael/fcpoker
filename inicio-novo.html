@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> Fight Club Poker </title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" href="img/icon.png">
+		<link rel="stylesheet" href="css/geral.css">
+		<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+		<script src="bower_components/walkway/src/walkway.js"></script>
+
+		<style>
+			body {
+				background-color: #111;
+			}
+
+			path, line, polyline {
+			    stroke: #fff;
+			    stroke-width: 2px;
+			}
+
+			path {
+			    fill: transparent;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div>
+			<svg version="1.1" id="borda-logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 800 800" enable-background="new 0 0 800 800" xml:space="preserve">
+				<g opacity="0.8">
+					<g>
+						<path fill="none" stroke="#12100B" stroke-miterlimit="10" d="M444.6,506.2c-34.2,0-68.5,0-102.7,0c29.5-16,38.7-37.2,39.7-57
+			c-38.3,21.3-90,8.3-91.8-35.3c2.4-61.8,72.6-77.5,103.5-131.7c31.8,55.1,113.6,78,102.1,141.6c-12.5,41.6-63.7,41.2-91.2,24.8
+			C404.9,474.5,420.4,494.7,444.6,506.2z"/>
+					</g>
+				</g>
+			</svg>
+		</div>
+	<script>
+		var svg = new Walkway({
+			selector: "#borda-logo",
+			duration: 5000
+		}).draw();
+	</script>
+	</body>
+</html>
