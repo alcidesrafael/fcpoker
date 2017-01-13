@@ -69,19 +69,19 @@
 						l0.9-1c2.6,2.3,3.8,3,7.3,3.9l-2.3,1c-2.5,1.4-3.9,2.9-4.1,6c-1.1,0.1-2.3-1.3-2.7-2.2C381.5,423.5,381.9,420.9,383.8,418.5z"/>
 				</g>
 				<defs>
-			        <linearGradient id="skyGradient" x1="100%" y1="100%">
+			        <linearGradient id="skyGradient" x1="100%" y1="100%" gradientTransform="rotate(65)">
 			          <stop offset="0%" stop-color="lightblue" stop-opacity=".5">
-			            <animate attributeName="stop-color" values="lightblue;#3056ff;#ff5e83;#f74747;#ba0000;#f74747;#ff5e83;#bd64fc;lightblue" dur="12s" repeatCount="indefinite" />
+			            <animate attributeName="stop-color" values="lightblue;#3056ff;#ff5e83;#ff5b8f;#ed2525;#ff5b8f;#ff5e83;#bd64fc;lightblue" dur="12s" repeatCount="indefinite" />
 			          </stop>
 			          <stop offset="100%" stop-color="lightblue" stop-opacity=".5">
-			            <animate attributeName="stop-color" values="lightblue;#f96dc8;#bd64fc;#d1b3fc;#bd64fc;#3056ff;lightblue" dur="14s" repeatCount="indefinite" />
-			            <animate attributeName="offset" values=".95;.80;.60;.40;.20;0;.20;.40;.60;.80;.95" dur="10s" repeatCount="indefinite" />
+			            <animate attributeName="stop-color" values="lightblue;#6df9ca;#f9b56d;#ff665e;#f9b56d;#6df9ca;lightblue" dur="14s" repeatCount="indefinite" />
+			            <animate attributeName="offset" values=".95;.80;.60;.40;.20;0;.20;.40;.60;.80;.95" dur="12s" repeatCount="indefinite" />
 			          </stop>
 			        </linearGradient>
 				</defs>
 			</svg>
 		</div>
-
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script>
 		var svg11 = new Walkway({
 			selector: "#borda-logo",
@@ -91,6 +91,11 @@
 			selector: "#punho-logo",
 			duration: 6000
 		}).draw();
+	</script>
+	<script>
+		setTimeout(function(){
+			$('#punho-logo').addClass('animated tada');
+		}, 4000);
 	</script>
 	</body>
 </html>
